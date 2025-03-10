@@ -385,28 +385,53 @@ but have different arguments
     \arg(z)=-\arg(z^{*})
 \end{equation}
 Addition
-$$(x_{1}+iy_{1})+(x_{2}+iy_{2})=(x_{1}+x_{2})+(y_{1}+y_{2})i$$
+\begin{equation}
+    (x_{1}+iy_{1})+(x_{2}+iy_{2})=(x_{1}+x_{2})+(y_{1}+y_{2})i
+\end{equation}
 Multiplication
-$$z_{1}z_{2}=(x_{1}+iy_{1})+(x_{2}+iy_{2})=x_{1}x_{2}+ix_{1}y_{2}+ix_{2}y_{2}+y_{1}y_{2}$$
-$$=x_{1}x_{2}+y_{1}y_{2}+i(x_{1}y_{2}+y_{1}x_{2})$$
+\begin{equation}
+    z_{1}z_{2}=(x_{1}+iy_{1})+(x_{2}+iy_{2})=x_{1}x_{2}+ix_{1}y_{2}+ix_{2}y_{2}+y_{1}y_{2}=x_{1}x_{2}+y_{1}y_{2}+i(x_{1}y_{2}+y_{1}x_{2})
+\end{equation}
+
+
 Multiplication with the conjugate
-$$zz^{*}=x^2-ixy+ixy+y^2=x^2+y^2=|z|$$
+\begin{equation}
+zz^{*}=x^2-ixy+ixy+y^2=x^2+y^2=|z|
+\end{equation}
 Division
-$$\frac{x_{1}+iy_{1}}{x_{2}+iy_{2}}=\frac{x_{1}+iy_{1}}{x_{2}+iy_{2}}\times\frac{x_{1}-iy_{1}}{x_{2}-iy_{2}}=\frac{x_{1}x_{2}+y_{1}y_{2}+i(x_{2}y_{1}-x_{1}y_{2})}{x^2+y^2}$$
+\begin{equation}
+    \frac{x_{1}+iy_{1}}{x_{2}+iy_{2}}=\frac{x_{1}+iy_{1}}{x_{2}+iy_{2}}\times\frac{x_{1}-iy_{1}}{x_{2}-iy_{2}}=\frac{x_{1}x_{2}+y_{1}y_{2}+i(x_{2}y_{1}-x_{1}y_{2})}{x^2+y^2}
+\end{equation}
 \subsubsection{Polar Form}
 Instead of describing a complex number, $z$, in Cartesian coordinates we can instead represent in $r$ and $\theta$ where,
-$$r=|z|$$
-$$\theta=arg(z)$$
+\begin{equation}
+    r=|z| \quad \theta=\arg(z)
+\end{equation}
 Euler's formula:
-$$re^{i\theta}=r(\cos \theta+i\sin \theta)$$
+\begin{equation}
+    re^{i\theta}=r(\cos \theta+i\sin \theta)
+\end{equation}
 We can use arithmetic for these forms of complex numbers
-$$z_{1}z_{2}=r_{1}e^{i\theta_{1}}r_{2}e^{i\theta_{2}}=r_{1}r_{2}e^{i(\theta_{1}+\theta_{2})}$$
-$$\frac{z_{1}}{z_{2}}=\frac{r_{1}e^{i\theta_{1}}}{r_{2}e^{i\theta_{2}}}=\frac{r_{1}}{r_{2}}e^{i(\theta_{1}-\theta_{2})}$$
-$$z^n=(re^{i\theta})^n=r^ne^{in\theta}=r^n(\cos \theta +i\sin \theta)$$
+\begin{equation}
+    z_{1}z_{2}=r_{1}e^{i\theta_{1}}r_{2}e^{i\theta_{2}}=r_{1}r_{2}e^{i(\theta_{1}+\theta_{2})}
+\end{equation}
+\begin{equation}
+    \frac{z_{1}}{z_{2}}=\frac{r_{1}e^{i\theta_{1}}}{r_{2}e^{i\theta_{2}}}=\frac{r_{1}}{r_{2}}e^{i(\theta_{1}-\theta_{2})}
+\end{equation}
+\begin{equation}
+    z^n=(re^{i\theta})^n=r^ne^{in\theta}=r^n(\cos \theta +i\sin \theta)
+\end{equation}
 The $n^{th}$ roots of a complex number are the solution of the equations 
-$$w=z^{1/n}$$
+\begin{equation}
+    w=z^{\frac{1}{n}}
+\end{equation}
 Where there are always $n$ roots
-$$z=re^{i \theta}=re^{\theta+2k\pi}$$For any integer $k$
-$$w_{k}=z^{1/n}=r^{1/n}e^{i(\theta+2k\pi)/n}$$
+\begin{equation}
+    z=re^{i \theta}=re^{\theta+2k\pi} 
+\end{equation}
+For any integer $k$
+\begin{equation}
+    w_{k}=z^{1/n}=r^{\frac{1}{n}}e^{\frac{i(\theta+2k\pi)}{n}}
+\end{equation}
 
 \end{document}
