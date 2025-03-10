@@ -16,8 +16,7 @@
 \usepackage{float}    %https://tex.stackexchange.com/a/232886
 \usepackage{mathtools} %https://tex.stackexchange.com/a/36154
 \usepackage{circuitikz} %https://www.overleaf.com/learn/latex/CircuiTikz_package
-\usepackage{tikz}
-%https://tex.stackexchange.com/a/10689
+\usepackage{tikz}%https://tex.stackexchange.com/a/10689
 \usepackage{xcolor}
 \usepackage{multicol}
 \usepackage{braket}
@@ -220,8 +219,6 @@ A line integral integrates a vector field $\mathbf{F}$ along a curve $C$ paramet
     \begin{equation}
         \int_C \mathbf{F} \cdot d\mathbf{r} = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt
     \end{equation}
-This is further explored in section \ \ref{subsec:lineintergral}
-\\\\
 Using a line integral we can calculate the length of a curve or path. Suppose a particle travels along a path defined by the position vector $\mathbf{r}(t)$. Over some short time interval, the distance travelled by the particle is
 \begin{equation}
     d\ell=\sqrt{d\mathbf{r}\cdot d\mathbf{r}}
@@ -268,25 +265,124 @@ For example, $f:\mathbb{R}\rightarrow\mathbb{R}$, $f(x) = \sin(x)$ is a valid fu
 In order to compute the inverse function, often we can rearrange the definition $f$ to express its argument in terms of its value.
 
 \subsubsection{Trigonometric Functions}
+\centering
+\begin{tikzpicture}
 
 
+    \draw (0,0) circle (3cm);
+
+ 
+    \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
+    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$y$};
+
+    
+    \def\angle{30} 
+
+
+    \draw[thick,black] (0,0) -- (\angle:3);
+
+    % Draw the vertical dashed line representing sin(theta)
+    \draw[dashed,black] (\angle:3) -- ({3*cos(\angle)},0) node[midway, right] {$\sin\theta$};
+
+    % Fill the section within the dashed line
+    \filldraw[fill=blue!20] (0,0) -- ({3*cos(\angle)},0) -- (\angle:3) -- cycle;
+
+    % Label the angle theta
+    \draw (0.5,0) arc (0:\angle:0.5) node[midway, right] {$\theta$};
+
+    % Label the point on the circle as (1,1)
+    \node at (\angle:3.3) {$(1,1)$};
+
+    % Label the origin
+    \node at (0,0) [below left] {$O$};
+
+\end{tikzpicture}
+
+
+The regular trigonometric functions are defined in terms of a unit circle, $x^{2}+y^{2}=1$. For this reason, they are also sometimes known as the \textbf{circular functions}. By definition, $\sin(\theta)$ is the height of a vertical line from the $x$ axis to the circle that subtends an angle $\theta$, as in Fig. 6.1. The cosine is the horizontal distance of this line from the origin. The other trigonometric functions can also be defined in terms of various projections on this circle, but it is much easier to define them in terms of these first two:
+
+\begin{equation}
+\tan(x)=\frac{\sin(x)}{\cos(x)} \quad \cot(x)=\frac{\cos(x)}{\sin(x)}
+\end{equation}
+
+\begin{equation}
+\sec(x)=\frac{1}{\cos(x)} \quad \csc(x)=\frac{1}{\sin(x)}
+\end{equation}
+
+as well as all the usual useful identities:
+
+\begin{equation}
+\sin^{2}(x)+\cos^{2}(x)=1
+\end{equation}
+
+\begin{equation}
+\tan^{2}(x)+1=\sec^{2}(x)
+\end{equation}
+
+\begin{equation}
+1+\cot^{2}(x)=\csc^{2}(x) \text{ etc.}
+\end{equation}
+
+Recall that for a circle of radius $r$, a sector of angle $\theta$ (in radians) has area $r^{2}\theta/2$. Since we are considering the unit circle, another way to define the circular functions is via the area of the sector, rather than the angle. We can define $\sin(\theta)$ as the height of a vertical line from the $x$ axis to a point on the circle that defines a sector with area $\theta/2$, as in Fig. 6.2.
+
+This definition allows for more direct generalisation to another useful set of functions.
+We will not prove it here, but the hyperbolic functions can also be defined in terms of the exponential function as
+
+\begin{equation}
+\sinh(x) = \frac{e^{x} - e^{-x}}{2} \quad \cosh(x) = \frac{e^{x} + e^{-x}}{2}.
+\end{equation}
+
+We can also define the remaining hyperbolic functions in analogy with the circular functions:
+
+\begin{equation}
+\tanh(x) = \frac{\sinh(x)}{\cosh(x)} \quad \coth(x) = \frac{\cosh(x)}{\sinh(x)}
+\end{equation}
+
+\begin{equation}
+\operatorname{sech}(x) = \frac{1}{\cosh(x)} \quad \operatorname{csch}(x) = \frac{1}{\sinh(x)}.
+\end{equation}
 
 \subsection{Differentiation}
+\subsubsection{Definition}
+We define the \textbf{derivative} of $f$ at $x_0$ as 
+\begin{equation}
+    \frac{df(x_0)}{dx}=\lim_{\delta x\rightarrow 0}\frac{\delta f(x_0)}{\delta x}=\lim_{\delta x\rightarrow 0}\frac{f(x_0+\delta x)}{\delta x}
+\end{equation}
 \subsection{Integration}
 
-\subsubsection{Line Integrals}
-\label{subsec:lineintergral}
 
 
 \section{Complex Numbers and Differential Equations}
-\section{Mechanics}
-\section{Astrophysics}
-\section{Thermal Physics}
-\section{Electric Circuits}
-\section{Quantum Physics}
-\section{Vibrations and Waves}
-\section{Relativity}
-\section{Thermodynamics}
-\section{Solid State}
-\section{Optics}
+\subsection{Introduction to Complex Numbers}
+\begin{flushleft}
+We define ,
+\begin{equation}
+    \sqrt{ -1 }=i
+\end{equation}
+A complex number has the form,
+$$z=x+iy$$
+where,
+$$x=\mathrm{Re}(z)$$
+$$y=\mathrm{Im}(z)$$
+Modulus
+$$|z|=\sqrt{ x^2+y^2 }$$
+Argument
+$$arg(z)=\theta=\arctan\left( \frac{y}{x} \right)$$
+Complex conjugate is defined as a complex number with the same real part but a negative imaginary part
+$$z^{*}=x-iy$$
+$z$ and $z^{*}$ have the same modulus
+$$|z|=|z^{*}|$$
+but have different arguments 
+$$arg(z)=-arg(z^{*})$$
+Addition
+$$(x_{1}+iy_{1})+(x_{2}+iy_{2})=(x_{1}+x_{2})+(y_{1}+y_{2})i$$
+Multiplication
+$$z_{1}z_{2}=(x_{1}+iy_{1})+(x_{2}+iy_{2})=x_{1}x_{2}+ix_{1}y_{2}+ix_{2}y_{2}+y_{1}y_{2}$$
+$$=x_{1}x_{2}+y_{1}y_{2}+i(x_{1}y_{2}+y_{1}x_{2})$$
+Multiplication with the conjugate
+$$zz^{*}=x^2-ixy+ixy+y^2=x^2+y^2=|z|$$
+Division
+$$\frac{x_{1}+iy_{1}}{x_{2}+iy_{2}}=\frac{x_{1}+iy_{1}}{x_{2}+iy_{2}}\times\frac{x_{1}-iy_{1}}{x_{2}-iy_{2}}=\frac{x_{1}x_{2}+y_{1}y_{2}+i(x_{2}y_{1}-x_{1}y_{2})}{x^2+y^2}$$
+
+\end{flushleft}
 \end{document}
