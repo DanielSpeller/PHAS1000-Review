@@ -265,39 +265,26 @@ For example, $f:\mathbb{R}\rightarrow\mathbb{R}$, $f(x) = \sin(x)$ is a valid fu
 In order to compute the inverse function, often we can rearrange the definition $f$ to express its argument in terms of its value.
 
 \subsubsection{Trigonometric Functions}
-
-\begin{tikzpicture}
+\begin{tcolorbox}
 \centering
+\begin{tikzpicture}
 
     \draw (0,0) circle (3cm);
-
- 
     \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
     \draw[->] (0,-3.5) -- (0,3.5) node[above] {$y$};
 
-    
     \def\angle{30} 
 
-
     \draw[thick,black] (0,0) -- (\angle:3);
-
-    % Draw the vertical dashed line representing sin(theta)
     \draw[dashed,black] (\angle:3) -- ({3*cos(\angle)},0) node[midway, right] {$\sin\theta$};
-
-    % Fill the section within the dashed line
     \filldraw[fill=blue!20] (0,0) -- ({3*cos(\angle)},0) -- (\angle:3) -- cycle;
+    \draw (0.5,0) arc (0:\angle:0.5) node[above, right] {$\theta$};
 
-    % Label the angle theta
-    \draw (0.5,0) arc (0:\angle:0.5) node[midway, right] {$\theta$};
-
-    % Label the point on the circle as (1,1)
-    \node at (\angle:3.3) {$(1,1)$};
-
-    % Label the origin
-    \node at (0,0) [below left] {$O$};
+    \node at (\angle:3.3) [right]{$(1,1)$};
+    \node at (0,0) [below, left] {$O$};
 
 \end{tikzpicture}
-
+\end{tcolorbox}
 
 The regular trigonometric functions are defined in terms of a unit circle, $x^{2}+y^{2}=1$. For this reason, they are also sometimes known as the \textbf{circular functions}. By definition, $\sin(\theta)$ is the height of a vertical line from the $x$ axis to the circle that subtends an angle $\theta$, as in Fig. 6.1. The cosine is the horizontal distance of this line from the origin. The other trigonometric functions can also be defined in terms of various projections on this circle, but it is much easier to define them in terms of these first two:
 
@@ -433,5 +420,37 @@ For any integer $k$
 \begin{equation}
     w_{k}=z^{1/n}=r^{\frac{1}{n}}e^{\frac{i(\theta+2k\pi)}{n}}
 \end{equation}
+\subsubsection{De Moivre's Theore,}
+From exponential form we can see that taking powers is as simple as
+\begin{equation}
+    (e^{i\theta})^n=e^{i\theta n}
+\end{equation}
+If we translate this to polar coordinates
+\begin{equation}
+    z^n=r^n(\cos(n\theta)\sin(n\theta))
+\end{equation}
+Hyperbolic functions
+\begin{equation}
+    e^{-i\theta}=\cos(-\theta)+i\sin(-\theta)
+\end{equation}
+\begin{equation}
+    e^{-i\theta}=\cos \theta-i\sin \theta
+\end{equation}
+\begin{equation}
+    \cos i\theta=\frac{e^{i\theta}+{e^{-i\theta}}}{2}=\cosh \theta
+\end{equation}
+\begin{equation}
+    \sin i\theta=\frac{e^{i\theta}-e^{-i\theta}}{2}=i\sinh \theta
+\end{equation}
+Logarithms
+\begin{equation}
+    \ln z=\ln(x+iy)=\ln(re^{i\theta})=\ln r +\ln e^{i\theta}=\ln (r)+i\theta
+\end{equation}
+Roots of polynomials
 
+When the roots of polynomials are complex they appear as complex conjugates. A polynomial of degree $n$ is an equation of the form
+\begin{equation}
+    P(z)=z^n+a_{n-1}z^{n-1}+\dots a_{n}z+a_{0},\quad\forall \ a_{n} \in \mathbb R
+\end{equation}
+The polynomial has $n$ solutions
 \end{document}
