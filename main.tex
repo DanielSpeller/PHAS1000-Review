@@ -33,7 +33,7 @@
 \end{flushleft}\egroup
 }
 \makeatother
-\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
 % Set the page style to "fancy"...
 \pagestyle{fancy}
 %... then configure it.
@@ -63,7 +63,7 @@
 \maketitle
 
 \noindent\rule{\linewidth}{0.4pt}
-This document is an overview of the content (excluding the experimental and coding physics topics) for the core physics module PHAS1000. Whilst not comprehensive, it is meant to give a good description of the content for revision purposes. Much of the content is drawn from the official content provided by the University of Leeds but some outside material is used. To keep down on the length of this review all A Level knowledge is assumed even if it is covered again during the module. It is encouraged to use this document in conjunction with the material provided on Minerva due to the topics being covered in more depth.
+This document is an overview of the content (excluding the experimental and coding physics topics) for the core physics module PHAS1000. Whilst not comprehensive, it is meant to give a good description of the content for revision purposes. Much of the content is drawn from the official content provided by the University of Leeds but some outside material is used. It is encouraged to use this document in conjunction with the material provided on Minerva due to the topics being covered in more depth.
 \newpage
 
 \section*{PHAS1000 Review}
@@ -149,8 +149,8 @@ In Cartesian coordinates the vector product of the same unit vector is 0 and for
 \begin{tcolorbox}
 \centering
 \begin{tikzpicture}
-    \draw[->,black]{(0,0) -- (5,0)};
-    \draw[->,black]{(5,-2) -- (0,-2)};
+    \draw[->,black]{(0,0) -- (4,0) node[midway,below]{$\dots\mathbf{\hat{i}}\quad\mathbf{\hat{j}}\quad\mathbf{\hat{k}}\quad\mathbf{\hat{i}}\quad\mathbf{\hat{j}}\quad\mathbf{\hat{k}}\dots$} node [midway, above]{$+$}} ;
+    \draw[->,black]{(4,-1) -- (0,-1) node[midway, below]{$-$}};
 \end{tikzpicture}
 \end{tcolorbox}
 Notice that this product is anti-commutative: $\mathbf{a} \times \mathbf{b} = -\mathbf{b} \times \mathbf{a}$
@@ -310,7 +310,7 @@ as well as all the usual useful identities:
 1+\cot^{2}(x)=\csc^{2}(x) \text{ etc.}
 \end{equation}
 
-Recall that for a circle of radius $r$, a sector of angle $\theta$ (in radians) has area $r^{2}\theta/2$. Since we are considering the unit circle, another way to define the circular functions is via the area of the sector, rather than the angle. We can define $\sin(\theta)$ as the height of a vertical line from the $x$ axis to a point on the circle that defines a sector with area $\theta/2$, as in Fig. 6.2.
+Recall that for a circle of radius $r$, a sector of angle $\theta$ (in radians) has area $r^{2}\theta/2$. Since we are considering the unit circle, another way to define the circular functions is via the area of the sector, rather than the angle. We can define $\sin(\theta)$ as the height of a vertical line from the $x$ axis to a point on the circle that defines a sector with area $\theta/2$.
 
 This definition allows for more direct generalisation to another useful set of functions.
 We will not prove it here, but the hyperbolic functions can also be defined in terms of the exponential function as
@@ -363,40 +363,49 @@ The complex conjugate is defined as a complex number with the same real part but
 \begin{equation}
     z^{*}=x-iy
 \end{equation}
-$z$ and $z^{*}$ have the same modulus
+$z$ and $z^{*}$ have the same modulus but have different arguments
 \begin{equation}
-    |z|=|z^{*}|
+    |z|=|z^{*}|\quad\arg(z)=-\arg(z^{*})
 \end{equation}
-but have different arguments 
-\begin{equation}
-    \arg(z)=-\arg(z^{*})
-\end{equation}
-Addition
+Basic arithmetic is straightforward when dealing with complex numbers in this form
+\begin{enumerate}
+    \item Addition
 \begin{equation}
     (x_{1}+iy_{1})+(x_{2}+iy_{2})=(x_{1}+x_{2})+(y_{1}+y_{2})i
 \end{equation}
-Multiplication
+\item Multiplication
 \begin{equation}
     z_{1}z_{2}=(x_{1}+iy_{1})+(x_{2}+iy_{2})=x_{1}x_{2}+ix_{1}y_{2}+ix_{2}y_{2}+y_{1}y_{2}=x_{1}x_{2}+y_{1}y_{2}+i(x_{1}y_{2}+y_{1}x_{2})
 \end{equation}
-
-
-Multiplication with the conjugate
+\item Multiplication with the conjugate
 \begin{equation}
 zz^{*}=x^2-ixy+ixy+y^2=x^2+y^2=|z|
 \end{equation}
-Division
+\item Division
 \begin{equation}
     \frac{x_{1}+iy_{1}}{x_{2}+iy_{2}}=\frac{x_{1}+iy_{1}}{x_{2}+iy_{2}}\times\frac{x_{1}-iy_{1}}{x_{2}-iy_{2}}=\frac{x_{1}x_{2}+y_{1}y_{2}+i(x_{2}y_{1}-x_{1}y_{2})}{x^2+y^2}
 \end{equation}
+\end{enumerate}
 \subsubsection{Polar Form}
 Instead of describing a complex number, $z$, in Cartesian coordinates we can instead represent in $r$ and $\theta$ where,
 \begin{equation}
     r=|z| \quad \theta=\arg(z)
 \end{equation}
 Euler's formula:
+Using a standard Taylor series we can expand $e^x$
 \begin{equation}
-    re^{i\theta}=r(\cos \theta+i\sin \theta)
+    e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots+\frac{x^n}{n!}+\dots
+\end{equation}
+If we substitute for a complex number $z=i\theta$
+\begin{equation}
+    e^{i\theta}=1+i\theta+\frac{i^2\theta^2}{2!}+\frac{i^3\theta^3}{3!}+\dots+\frac{i^n\theta^2}{n!}+\dots
+\end{equation}
+\begin{equation}
+    e^{i\theta}=\left(1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}+\dots\right)+i\left(\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}\right)
+\end{equation}
+You should recognise these as the standard expansions for $\cos$ and $\sin$
+\begin{equation}
+    e^{i\theta}=(\cos \theta+i\sin \theta)
 \end{equation}
 We can use arithmetic for these forms of complex numbers
 \begin{equation}
@@ -420,7 +429,7 @@ For any integer $k$
 \begin{equation}
     w_{k}=z^{1/n}=r^{\frac{1}{n}}e^{\frac{i(\theta+2k\pi)}{n}}
 \end{equation}
-\subsubsection{De Moivre's Theore,}
+\subsubsection{De Moivre's Theorem}
 From exponential form we can see that taking powers is as simple as
 \begin{equation}
     (e^{i\theta})^n=e^{i\theta n}
@@ -446,11 +455,83 @@ Logarithms
 \begin{equation}
     \ln z=\ln(x+iy)=\ln(re^{i\theta})=\ln r +\ln e^{i\theta}=\ln (r)+i\theta
 \end{equation}
-Roots of polynomials
-
 When the roots of polynomials are complex they appear as complex conjugates. A polynomial of degree $n$ is an equation of the form
 \begin{equation}
     P(z)=z^n+a_{n-1}z^{n-1}+\dots a_{n}z+a_{0},\quad\forall \ a_{n} \in \mathbb R
 \end{equation}
 The polynomial has $n$ solutions
+\subsection{Ordinary Differential equations}
+An ODE is defined to be an equation using derivatives of a function with a singular variable
+\begin{enumerate}
+    \item The \textbf{order} of a differential equation is the highest order of derivative that it contains
+    \item A \textbf{linear} ODE of order $n$ is of the form
+    \begin{equation}
+        \frac{d^ny}{dx^n}+a_{n-1}\frac{d^{n-1}y}{dx^{n-1}}+\dots+a_n\frac{dy}{dx}+a_0y=g(x)
+    \end{equation}
+    \item An \textbf{inhomogeneous} ODE has $g(x)\neq0$
+    \item A \textbf{homogeneous} ODE has $g(x)=0$
+\end{enumerate}
+There 4 ways to solve first order ODE's
+\begin{enumerate}
+    \item For differential equations of the form
+    \begin{equation}
+        \frac{dy}{dx}=g(x)
+    \end{equation}
+    Then we can integrate directly to find 
+    \begin{equation}
+        y=G(x)
+    \end{equation}
+    \item For differential equations of the form
+    \begin{equation}
+        \frac{dy}{dx}=\frac{g(x)}{h(y)}
+    \end{equation}
+    We can solve this by moving the respective variables either side and integrating
+    \begin{equation}
+        h(y) dy=g(x)dx
+    \end{equation}
+    \begin{equation}
+        \int h(y)dy=\int g(x) dx
+    \end{equation}
+    \begin{equation}
+        H(y)=G(x)+c
+    \end{equation}
+    \begin{equation}
+        y=H^{-1}(G(x)+c)
+    \end{equation}
+\item For differential equations of the form
+\begin{equation}
+    \frac{dy}{dx}+P(x)y=Q(x)
+\end{equation}
+We can solve this by multiplying each term by the \textbf{integrating factor} $I(x)$
+\begin{equation}\label{eq:2210}
+    I(x)\frac{dy}{dx}+I(x)P(x)y=I(x)Q(x)
+\end{equation}
+We choose $I(x)$ to be such that $\frac{d}{dx}I(x)y=I(x)\frac{dy}{dx}+I(x)P(x)y$
+\begin{equation}\label{eq:2211}
+    \frac{d(I(x)y)}{dx}=I(x)\frac{dy}{dx}+y\frac{I(x)}{dx}=I(x)\frac{dy}{dx}+I(x)P(x)y
+\end{equation}
+\begin{equation}
+    y\frac{dI(x)}{dx}=I(x)P(x)y
+\end{equation}
+\begin{equation}
+    \int \frac{dI(x)}{I(x)}=\int P(x)
+\end{equation}
+\begin{equation}
+    \ln I(x)=\int P(x)
+\end{equation}
+\begin{equation}
+    I(x)=e^{\int P(x)}
+\end{equation}
+From \eqref{eq:2210} and \eqref{eq:2211} we can see
+\begin{equation}
+    \frac{d}{dx}I(x)y=I(x)Q(x)
+\end{equation}
+\begin{equation}
+    I(x)y=\int I(x)Q(x)dx
+\end{equation}
+\item For differential equations of the form 
+\begin{equation}
+    \frac{dy}{dx}=f\left(\frac{y}{x}\right)
+\end{equation}
+\end{enumerate}
 \end{document}
