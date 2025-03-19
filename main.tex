@@ -461,6 +461,7 @@ When the roots of polynomials are complex they appear as complex conjugates. A p
 \end{equation}
 The polynomial has $n$ solutions
 \subsection{Ordinary Differential equations}
+\subsubsection{First Order }
 An ODE is defined to be an equation using derivatives of a function with a singular variable
 \begin{enumerate}
     \item The \textbf{order} of a differential equation is the highest order of derivative that it contains
@@ -522,7 +523,7 @@ We choose $I(x)$ to be such that $\frac{d}{dx}I(x)y=I(x)\frac{dy}{dx}+I(x)P(x)y$
 \begin{equation}
     I(x)=e^{\int P(x)}
 \end{equation}
-From \eqref{eq:2210} and \eqref{eq:2211} we can see
+From Eq \eqref{eq:2210} and Eq \eqref{eq:2211} we can see
 \begin{equation}
     \frac{d}{dx}I(x)y=I(x)Q(x)
 \end{equation}
@@ -530,8 +531,73 @@ From \eqref{eq:2210} and \eqref{eq:2211} we can see
     I(x)y=\int I(x)Q(x)dx
 \end{equation}
 \item For differential equations of the form 
-\begin{equation}
+\begin{equation}\label{eq:2218}
     \frac{dy}{dx}=f\left(\frac{y}{x}\right)
 \end{equation}
+If we use a substitution $v=\frac{y}{x}\Longleftrightarrow y=vx$
+\begin{equation}
+    \frac{dy}{dx}=v+x\frac{dv}{dx}
+\end{equation}
+Eq \eqref{eq:2218} then becomes 
+\begin{equation}
+    v+x\frac{dv}{dx}=f(v)
+\end{equation}
+\begin{equation}
+    \int \frac{dv}{f(v)-v}=\int\frac{dx}{x}
+\end{equation}
 \end{enumerate}
+\subsubsection{Second Order}
+Second Order Linear ODE's have form
+\begin{equation}
+    \frac{d^2y}{dx^2}+f(x)\frac{dy}{dx}+g(x)y=h(x)
+\end{equation}
+For homogenous $(h(x)=0)$ cases consider the ODE
+\begin{equation}\label{eq:2223}
+     a\frac{d^2y}{dx^2}+b\frac{dy}{dx}+cy=0\quad\forall\quad a,b,c\in\mathbb R
+\end{equation}
+If we let $y=e^{\lambda x}$
+\begin{equation}
+    \implies \frac{dy}{dx}=\lambda e^{\lambda x} \implies \frac{d^2x}{dy^2} = \lambda^2e^{\lambda x}
+\end{equation}
+Substituting this into Eq \eqref{eq:2223} we obtain
+\begin{equation}\label{eq:2225}
+    a\lambda^2e^{\lambda x}+b \lambda e^{\lambda x}+ce^{\lambda x}
+    =(e^{\lambda x})(a\lambda^2+b\lambda+c)
+\end{equation}
+Since\begin{equation}
+e^{\lambda x}\neq 0 \quad \forall \quad x \in \mathbb R
+\end{equation}
+Then the solutions to Eq \eqref{eq:2225} are given by the quadratic equation and the outcome will be one of 3 cases
+\begin{enumerate}
+    \item $b^2>4ac$ 2 real and distinct roots
+    \begin{equation}
+    y=Ae^{\lambda_1x}+Be^{\lambda_2x}
+    \end{equation}
+    \item $b^2=4ac$ only one root which is real
+    \begin{equation}
+        y=(A+Bx)e^{\lambda x}
+    \end{equation}
+    \item $b^2<4ac$ roots are complex $\lambda=\alpha \pm \beta i$
+    \begin{equation}
+      y=  e^{\alpha x}(Ae^{\beta x}+Be^{-i\beta x})
+    \end{equation}
+    \begin{equation}
+      y=  e^{\alpha x}(C\cos\beta x+D\sin\beta x)
+    \end{equation}
+\end{enumerate}
+\section{Electronic circuits}
+\subsection{Basic components}
+\subsubsection{Kirchhoff's Laws}
+Kirchhoff's laws are:
+\begin{enumerate}
+    \item Kirchhoff's Current Law: The algebraic sum of currents entering a node is equal to zero
+\begin{equation}
+    \sum I_{in}=\sum I_{out}
+\end{equation}
+\item Kirchhoff's Voltage Law: The algebraic sum of voltages in any closed lop is equal to zero 
+\begin{equation}
+    \sum V=0
+\end{equation}
+\end{enumerate}
+
 \end{document}
